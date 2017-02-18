@@ -18,7 +18,7 @@ import java.util.HashMap;
 public class PermissionChecker {
 
     public static boolean lacksPermissions(Context context, String... permissions) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return true;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return false;
         for (String permission : permissions) {
             if (lacksPermission(context, permission)) {
                 return true;
@@ -29,7 +29,7 @@ public class PermissionChecker {
 
     public static boolean lacksPermission(Context context, String permission) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
+            return false;
         } else {
             return context.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED;
         }

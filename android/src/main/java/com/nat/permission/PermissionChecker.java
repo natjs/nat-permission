@@ -11,8 +11,8 @@ import android.support.annotation.NonNull;
 import java.util.HashMap;
 
 /**
- * Created by Daniel on 17/2/16.
- *  Copyright (c) 2017 Nat. All rights reserved.
+ * Created by Acathur on 17/2/16.
+ *  Copyright (c) 2017 Instapp. All rights reserved.
  */
 
 public class PermissionChecker {
@@ -44,7 +44,7 @@ public class PermissionChecker {
         return true;
     }
 
-    public static void requestPermissions(final Activity activity, HashMap<String, String> dialogParams, final HLModuleResultListener listener, final int requestCode, final String... permissions) {
+    public static void requestPermissions(final Activity activity, HashMap<String, String> dialogParams, final ModuleResultListener listener, final int requestCode, final String... permissions) {
         if (shouldShowRequestPermissionsRationale(activity, permissions)) {
             AlertDialog dialog = new AlertDialog.Builder(activity)
                     .setTitle(dialogParams.get("title"))
